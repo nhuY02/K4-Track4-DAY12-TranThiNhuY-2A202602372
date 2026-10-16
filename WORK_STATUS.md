@@ -10,9 +10,11 @@ Hoàn thiện Lab Day 12, đối chiếu evidence thật và điền REPORT.md t
 - Chạy toàn bộ unit tests có sẵn bằng Python runtime đi kèm Codex: 25/25 PASS.
 - Phát hiện evidence sẵn có cho MSSV 2A202602759 với 5 seed; xác nhận tất cả file có cùng MSSV/seed và các bước pipeline đã chạy.
 - Điền bảng kết quả và cả 8 câu trong REPORT.md dựa trên evidence; lấy mẫu khung TTC thấp để giải thích AEB.
+- Tạo 5 commit cục bộ theo nhóm bước, tổng số commit của học viên đạt yêu cầu rubric.
+- Chạy `scripts/check_submission.py --save-verify` trong Python UTF-8 mode: 56 PASS, 0 cảnh báo, 0 FAIL; evidence/verify.txt đã được tạo lại với kết quả đạt.
 
 ## Việc đang làm
-- Tạo các commit cục bộ theo nhóm bước của lab để đáp ứng quy định ít nhất 5 commit; chưa đẩy lên remote.
+- Cập nhật WORK_STATUS.md và commit bản verify thành công; kiểm tra lần cuối trạng thái repository.
 
 ## File đã sửa/tạo
 - lab12/replay.py
@@ -23,6 +25,7 @@ Hoàn thiện Lab Day 12, đối chiếu evidence thật và điền REPORT.md t
 - lab12/augment.py
 - WORK_STATUS.md (tạo mới để theo dõi task theo yêu cầu).
 - REPORT.md (điền kết quả và câu trả lời từ evidence).
+- evidence/*.json, evidence/*.png và evidence/verify.txt (bằng chứng chạy thật, đã được checker xác nhận).
 
 ## Quyết định quan trọng
 - Phạm vi code: chỉ 10 hàm TODO trong lab12/; chưa chỉnh REPORT.md.
@@ -31,7 +34,7 @@ Hoàn thiện Lab Day 12, đối chiếu evidence thật và điền REPORT.md t
 - Checker chạy mặc định vấp encoding cp1252 khi đọc báo cáo UTF-8; chạy lại với Python UTF-8 mode, không sửa script lớp.
 
 ## Lỗi/vấn đề còn tồn tại
-- Lần checker đầu sau khi điền report đã PASS evidence, unit tests và cả 8 câu; còn FAIL hai điều kiện Git do evidence chưa commit và lịch sử hiện chỉ có 3 commit bộ khung.
+- Không còn lỗi checker đã biết; lần chạy gần nhất có 56 PASS, 0 FAIL.
 
 ## Bước tiếp theo cần làm
-- Commit các thay đổi theo nhóm bước, chạy checker lại ở UTF-8 mode, rồi báo trạng thái local/remote.
+- Chạy checker sau commit để xác nhận cây sạch; remote chưa được cập nhật.
