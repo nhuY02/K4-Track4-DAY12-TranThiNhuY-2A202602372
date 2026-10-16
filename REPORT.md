@@ -4,9 +4,9 @@
 
 | | |
 |---|---|
-| Họ và tên | Nguyễn Minh Hiển |
-| MSSV (đúng bằng `--student-id` bạn đã chạy) | 2A202602759 |
-| GitHub | nmhien165-ui |
+| Họ và tên | Trần Thị Như Ý |
+| MSSV (đúng bằng `--student-id` bạn đã chạy) | 2A202602372 |
+| GitHub | nhuY02 |
 | Seed chia dữ liệu / seed mô hình (xem `evidence/closedloop.json`, mục `student`) | 5199 / 4453 |
 | Số seed huấn luyện bạn dùng (`--seeds`) | 5 |
 

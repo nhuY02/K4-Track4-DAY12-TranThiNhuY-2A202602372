@@ -8,7 +8,7 @@ Hoàn thiện Lab Day 12, đối chiếu evidence thật và điền REPORT.md t
 - Xác nhận notebook Colab là tùy chọn; lab chỉ cần Python/NumPy, pandas, matplotlib và không cần GPU.
 - Hoàn thiện 10 hàm TODO trong lab12/.
 - Chạy toàn bộ unit tests có sẵn bằng Python runtime đi kèm Codex: 25/25 PASS.
-- Phát hiện evidence sẵn có cho MSSV 2A202602759 với 5 seed; xác nhận tất cả file có cùng MSSV/seed và các bước pipeline đã chạy.
+- Phát hiện evidence sẵn có cho MSSV 2A202602372 với 5 seed; xác nhận tất cả file có cùng MSSV/seed và các bước pipeline đã chạy.
 - Điền bảng kết quả và cả 8 câu trong REPORT.md dựa trên evidence; lấy mẫu khung TTC thấp để giải thích AEB.
 - Tạo 5 commit cục bộ theo nhóm bước, tổng số commit của học viên đạt yêu cầu rubric.
 - Chạy `scripts/check_submission.py --save-verify` trong Python UTF-8 mode: 56 PASS, 0 cảnh báo, 0 FAIL; evidence/verify.txt đã được tạo lại với kết quả đạt.
@@ -31,7 +31,7 @@ Hoàn thiện Lab Day 12, đối chiếu evidence thật và điền REPORT.md t
 ## Quyết định quan trọng
 - Phạm vi code: chỉ 10 hàm TODO trong lab12/; chưa chỉnh REPORT.md.
 - Trước mắt xác minh bằng unit tests cục bộ; chỉ dùng Colab/Kaggle nếu pipeline thực tế cần tài nguyên hoặc môi trường không khả dụng.
-- Evidence hiện có dùng MSSV thật 2A202602759, cùng seed chia 5199 và 5 seed huấn luyện; không cần chạy lại pipeline nặng hoặc dùng Colab/Kaggle.
+- Evidence hiện có dùng MSSV thật 2A202602372, cùng seed chia 5199 và 5 seed huấn luyện; không cần chạy lại pipeline nặng hoặc dùng Colab/Kaggle.
 - Checker chạy mặc định vấp encoding cp1252 khi đọc báo cáo UTF-8; chạy lại với Python UTF-8 mode, không sửa script lớp.
 
 ## Lỗi/vấn đề còn tồn tại
