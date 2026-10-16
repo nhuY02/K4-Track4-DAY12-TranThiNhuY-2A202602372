@@ -122,7 +122,45 @@ def compare_with_tol(golden, new, atol=1e-3, rtol=1e-3):
     #   * |golden|. Hai NaN ở cùng vị trí coi là bằng nhau. Trả dict có đúng các khoá: segments,
     #   differ_beyond_tol, not_bit_identical (số đoạn không giống TỪNG BIT), max_abs_diff, atol, rtol,
     #   differing_segments (tối đa 20 chỉ số đầu, dạng list).
-    raise NotImplementedError("TODO compare_with_tol: xem GUIDE.md, Bước 1")
+    golden = np.asarray(golden)
+    new = np.asarray(new)
+    if golden.shape != new.shape:
+        raise ValueError(f"replay arrays must have the same shape, got {golden.shape} and {new.shape}")
+    if golden.ndim != 2:
+        raise ValueError(f"replay arrays must have shape (segments, steps), got {golden.shape}")
+
+    different = []
+    max_abs_diff = 0.0
+    not_bit_identical = 0
+    for i, (a, b) in enumerate(zip(golden, new)):
+        both_nan = np.isnan(a) & np.isnan(b)
+        exactly_equal = (a == b) | both_nan
+        if not np.all(exactly_equal):
+            not_bit_identical += 1
+
+        finite_pair = np.isfinite(a) & np.isfinite(b)
+        delta = np.zeros(a.shape, dtype=np.float64)
+        delta[finite_pair] = np.abs(a[finite_pair].astype(np.float64) - b[finite_pair].astype(np.float64))
+        mismatched_nonfinite = ~(finite_pair | both_nan) & ~exactly_equal
+        if np.any(mismatched_nonfinite):
+            delta[mismatched_nonfinite] = np.inf
+        if delta.size:
+            max_abs_diff = max(max_abs_diff, float(np.max(delta)))
+
+        tolerance = atol + rtol * np.abs(a.astype(np.float64))
+        beyond = (finite_pair & (delta > tolerance)) | mismatched_nonfinite
+        if np.any(beyond):
+            different.append(i)
+
+    return {
+        "segments": int(golden.shape[0]),
+        "differ_beyond_tol": len(different),
+        "not_bit_identical": not_bit_identical,
+        "max_abs_diff": max_abs_diff,
+        "atol": atol,
+        "rtol": rtol,
+        "differing_segments": different[:20],
+    }
 
 
 def summation_order_demo(n=1_000_000, seed=0):
