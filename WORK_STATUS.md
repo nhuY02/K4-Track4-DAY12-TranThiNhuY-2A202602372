@@ -12,9 +12,10 @@ Hoàn thiện Lab Day 12, đối chiếu evidence thật và điền REPORT.md t
 - Điền bảng kết quả và cả 8 câu trong REPORT.md dựa trên evidence; lấy mẫu khung TTC thấp để giải thích AEB.
 - Tạo 5 commit cục bộ theo nhóm bước, tổng số commit của học viên đạt yêu cầu rubric.
 - Chạy `scripts/check_submission.py --save-verify` trong Python UTF-8 mode: 56 PASS, 0 cảnh báo, 0 FAIL; evidence/verify.txt đã được tạo lại với kết quả đạt.
+- Chạy checker lần cuối sau khi commit: 56 PASS, 0 cảnh báo, 0 FAIL; cây Git sạch.
 
 ## Việc đang làm
-- Cập nhật WORK_STATUS.md và commit bản verify thành công; kiểm tra lần cuối trạng thái repository.
+- Không còn việc cần làm trong phạm vi hoàn thiện code, evidence và report ở máy local.
 
 ## File đã sửa/tạo
 - lab12/replay.py
@@ -34,7 +35,7 @@ Hoàn thiện Lab Day 12, đối chiếu evidence thật và điền REPORT.md t
 - Checker chạy mặc định vấp encoding cp1252 khi đọc báo cáo UTF-8; chạy lại với Python UTF-8 mode, không sửa script lớp.
 
 ## Lỗi/vấn đề còn tồn tại
-- Không còn lỗi checker đã biết; lần chạy gần nhất có 56 PASS, 0 FAIL.
+- Không còn lỗi checker đã biết. Thay đổi đang nằm trên nhánh local `main`, chưa được đẩy lên GitHub.
 
 ## Bước tiếp theo cần làm
-- Chạy checker sau commit để xác nhận cây sạch; remote chưa được cập nhật.
+- Nếu muốn cập nhật repo GitHub, đẩy nhánh local `main` lên `origin`; thao tác này chưa được thực hiện.
